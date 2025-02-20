@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://h8fkhdbpt6qt"]
-
-[ext_resource type="Script" path="res://test/pool_test/pool_test.gd" id="1_tgmjq"]
-[ext_resource type="PackedScene" uid="uid://08pkpufakaac" path="res://test/pool_test/bullet.tscn" id="4_e7ns5"]
-
-[node name="PoolTest" type="Node"]
-script = ExtResource("1_tgmjq")
-bullet_prefab = ExtResource("4_e7ns5")

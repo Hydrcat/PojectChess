@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://tnk37x2vplop"]
-
-[ext_resource type="Script" path="res://framework/core/component.gd" id="1_0jt2o"]
-
-[node name="Entity" type="Node"]
-
-[node name="ComponentBase" type="Node" parent="."]
-script = ExtResource("1_0jt2o")

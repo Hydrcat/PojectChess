@@ -1,17 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://baql76sxmttr"]
+[gd_scene load_steps=3 format=4 uid="uid://baql76sxmttr"]
 
-[ext_resource type="Texture2D" uid="uid://dh4u1ar3wxhy0" path="res://game_borad/tile_horizontal.png" id="1_e05lc"]
-[ext_resource type="Script" path="res://game_borad/game_board.gd" id="1_sj83e"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_333it"]
-texture = ExtResource("1_e05lc")
-texture_region_size = Vector2i(164, 190)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_u4ub2"]
-tile_shape = 3
-tile_size = Vector2i(164, 190)
-sources/0 = SubResource("TileSetAtlasSource_333it")
+[ext_resource type="Script" path="res://test_game/game_borad/game_board.gd" id="1_sj83e"]
+[ext_resource type="TileSet" uid="uid://dtxwvjygmva28" path="res://test_game/game_borad/game_board.tres" id="2_nvlwm"]
 
 [node name="GameBoard" type="Node2D"]
 script = ExtResource("1_sj83e")
@@ -19,5 +9,10 @@ is_debug_mode = true
 coord_visual = true
 
 [node name="MainBorad" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_u4ub2")
+enabled = false
+tile_set = ExtResource("2_nvlwm")
+
+[node name="InteractBorad" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_nvlwm")

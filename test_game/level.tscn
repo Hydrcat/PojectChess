@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cplhwtsrbch2"]
+
+[ext_resource type="Script" path="res://test_game/level.gd" id="1_2adfj"]
+[ext_resource type="Script" path="res://test_game/interact.gd" id="1_i6n7m"]
+[ext_resource type="PackedScene" uid="uid://baql76sxmttr" path="res://test_game/game_borad/game_board.tscn" id="1_ipqn6"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_2adfj")
+move_speed = 60.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="GameBoard" parent="." instance=ExtResource("1_ipqn6")]
+
+[node name="LevelInteract" type="Node2D" parent="."]
+script = ExtResource("1_i6n7m")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://csc58c8xssp8f"]
+
+[ext_resource type="Script" path="res://test_game/game_borad/grid_tile.gd" id="1_eyeqq"]
+[ext_resource type="Texture2D" uid="uid://dh4u1ar3wxhy0" path="res://test_game/game_borad/tile_horizontal.png" id="2_l41og"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35pn0"]
+bg_color = Color(0.202929, 0.682843, 0.641856, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="GridTile" type="Node2D"]
+script = ExtResource("1_eyeqq")
+
+[node name="Select" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.530092, 0.905411, 0.84569, 1)
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_l41og")
+
+[node name="GridVisual" type="Sprite2D" parent="."]
+texture = ExtResource("2_l41og")
+
+[node name="Danger" type="Sprite2D" parent="GridVisual"]
+visible = false
+self_modulate = Color(0.871046, 0.196677, 0.41316, 1)
+texture = ExtResource("2_l41og")
+
+[node name="DebugLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_35pn0")
+text = "(0,0)"
+horizontal_alignment = 1
+vertical_alignment = 1
