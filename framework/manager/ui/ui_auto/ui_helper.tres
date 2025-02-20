@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UIHelper" load_steps=3 format=3 uid="uid://b57ftwal57wqd"]
+
+[ext_resource type="Resource" uid="uid://dpruroe73bfx2" path="res://framework/manager/asset/asset_helper.tres" id="1_dg6bw"]
+[ext_resource type="Script" path="res://framework/manager/ui/ui_auto/ui_helper.gd" id="1_girh2"]
+
+[resource]
+script = ExtResource("1_girh2")
+gen_button = false
+asset_helper = ExtResource("1_dg6bw")

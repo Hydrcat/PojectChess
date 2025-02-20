@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfe1whsv5rv0g"]
+
+[ext_resource type="Script" path="res://test/asset_test/asset_test.gd" id="1_s6jsb"]
+
+[node name="AssetTest" type="Node2D"]
+script = ExtResource("1_s6jsb")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(585, 295)

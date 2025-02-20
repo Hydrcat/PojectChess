@@ -1,0 +1,24 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="GodotTemplate"
+run/main_scene="res://test/ui_test/ui_test.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.png"
+
+[autoload]
+
+HydrcatFramework="*res://framework/hydrcat_framework.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg")

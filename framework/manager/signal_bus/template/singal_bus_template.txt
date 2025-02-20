@@ -1,0 +1,16 @@
+extends {father_class_name}
+class_name {class_name}
+
+# HydrcatFramework 自动生成
+# 请勿修改
+
+#region: 单例
+static var instance: {class_name}
+
+func _ready() -> void:
+	assert(instance == null,"单例已存在:"+"{class_name}")
+	instance = self
+	
+#endregion
+
+#region: signal

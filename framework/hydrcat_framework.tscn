@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://0m8qop3uxl38"]
+
+[ext_resource type="Script" path="res://framework/hydrcat_framework.gd" id="1_qs6df"]
+[ext_resource type="Script" path="res://framework/manager/asset/asset_manager.gd" id="2_2p3cx"]
+[ext_resource type="Script" path="res://framework/manager/node_pool/pool_manager.gd" id="2_g684u"]
+[ext_resource type="Resource" uid="uid://cxrp3o7pk22d3" path="res://framework/_settings/need_gen_helper.tres" id="2_kn5ot"]
+[ext_resource type="Resource" uid="uid://dpruroe73bfx2" path="res://framework/manager/asset/asset_helper.tres" id="3_1gm58"]
+[ext_resource type="Script" path="res://framework/manager/ui/ui_manager.gd" id="3_oqyeg"]
+[ext_resource type="Script" path="res://framework/manager/signal_bus/signal_bus_manager.gd" id="5_aybhm"]
+[ext_resource type="Resource" uid="uid://cw4ud8u4g7n26" path="res://framework/manager/ui/ui_signal_bus.tres" id="7_uqdm5"]
+
+[node name="Framwork" type="Node" node_paths=PackedStringArray("asset_manager", "ui_manager", "pool_manager", "signal_bus_manager")]
+script = ExtResource("1_qs6df")
+need_gen = ExtResource("2_kn5ot")
+asset_manager = NodePath("AssetManager")
+ui_manager = NodePath("UIManager")
+pool_manager = NodePath("PoolManager")
+signal_bus_manager = NodePath("SignalBusManager")
+
+[node name="AssetManager" type="Node" parent="."]
+script = ExtResource("2_2p3cx")
+asset_colllector = ExtResource("3_1gm58")
+
+[node name="SignalBusManager" type="Node" parent="."]
+script = ExtResource("5_aybhm")
+
+[node name="PoolManager" type="Node" parent="."]
+script = ExtResource("2_g684u")
+
+[node name="UIManager" type="Node" parent="."]
+script = ExtResource("3_oqyeg")
+ui_signal_helper = ExtResource("7_uqdm5")

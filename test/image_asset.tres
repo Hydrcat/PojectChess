@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AssetConfig" load_steps=2 format=3 uid="uid://xn1cs64puyf5"]
+
+[ext_resource type="Script" path="res://framework/manager/asset/asset_config.gd" id="1_8au40"]
+
+[resource]
+script = ExtResource("1_8au40")
+name = &"Image"
+path = &"res://test/"
+collect_match = &"*.svg"

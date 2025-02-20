@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1001,
+    "sname": "刃击",
+    "desc": "对敌方造成{0}点伤害",
+    "type": 1,
+    "cost": 1,
+    "target_select_type": 2,
+    "card_effect_data": {
+      "damage": 2,
+      "heal": 0,
+      "add_defend": 0
+    },
+    "card_visual_path": "tile_0103"
+  },
+  {
+    "id": 1002,
+    "sname": "防御",
+    "desc": "对自身施加{3}点防御值",
+    "type": 2,
+    "cost": 1,
+    "target_select_type": 1,
+    "card_effect_data": {
+      "damage": 0,
+      "heal": 0,
+      "add_defend": 1
+    },
+    "card_visual_path": "tile_0131"
+  },
+  {
+    "id": 1003,
+    "sname": "防御",
+    "desc": "对场上所有单位施加{3}点伤害",
+    "type": 1,
+    "cost": 1,
+    "target_select_type": 4,
+    "card_effect_data": {
+      "damage": 0,
+      "heal": 0,
+      "add_defend": 1
+    },
+    "card_visual_path": "tile_0130"
+  },
+  {
+    "id": 1004,
+    "sname": "横劈",
+    "desc": "对场上所有单位施加{0}点伤害",
+    "type": 1,
+    "cost": 1,
+    "target_select_type": 3,
+    "card_effect_data": {
+      "damage": 5,
+      "heal": 0,
+      "add_defend": 0
+    },
+    "card_visual_path": "tile_0103"
+  },
+  {
+    "id": 1005,
+    "sname": "全体防御",
+    "desc": "对场上所有单位施加{3}点防御",
+    "type": 1,
+    "cost": 1,
+    "target_select_type": 4,
+    "card_effect_data": {
+      "damage": 0,
+      "heal": 0,
+      "add_defend": 20
+    },
+    "card_visual_path": "tile_0130"
+  }
+]

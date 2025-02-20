@@ -1,0 +1,5 @@
+extends SignalBus
+class_name {father_class_name}
+
+# HydrcatFramework 自动生成
+# 可以在下面新增信号，然后调用{class_name}.instance使用

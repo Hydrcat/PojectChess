@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://2216mcmnp3x6"]
+
+[ext_resource type="Script" path="res://addons/luban_godot/luabn_editor.gd" id="1_540qh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6alnk"]
+bg_color = Color(0.502342, 0.831701, 0.634993, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duhve"]
+bg_color = Color(0.368627, 0.678431, 0.498039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjh6e"]
+bg_color = Color(0.367031, 0.676715, 0.49798, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bejfy"]
+bg_color = Color(0.481075, 0.811944, 0.615303, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p48px"]
+bg_color = Color(0.368627, 0.678431, 0.498039, 1)
+
+[node name="LuabnEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -923.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_540qh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="path_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "当前路径"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="error_label" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+text = "未检查到配置文件夹"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="create_button" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "初始化配置
+"
+
+[node name="refresh_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1.刷新列表"
+
+[node name="export_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "2.进行导表"
+
+[node name="open_path_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "3.打开配置文件夹"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "-------------------------------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="ExcelList" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="AddNew" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/ExcelList"]
+layout_mode = 2
+
+[node name="add_new_button" type="Button" parent="VBoxContainer/ScrollContainer/ExcelList/AddNew"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_6alnk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_duhve")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjh6e")
+text = "+"
+
+[node name="new_edit" type="LineEdit" parent="VBoxContainer/ScrollContainer/ExcelList/AddNew"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.0619267, 0.0619267, 0.0619267, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_bejfy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p48px")
+text = "#ExcelConfigName"
+placeholder_text = "#前缀表可自动导入"
+alignment = 1
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+select_all_on_focus = true
+caret_blink = true
+
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/ExcelList/AddNew/add_new_button" to="." method="_on_add_new_button_pressed"]
+[connection signal="text_submitted" from="VBoxContainer/ScrollContainer/ExcelList/AddNew/new_edit" to="." method="_on_new_edit_text_submitted"]

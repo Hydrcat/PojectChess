@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SignalHelper" load_steps=6 format=3 uid="uid://c3csmt470uj5r"]
+
+[ext_resource type="Script" path="res://framework/manager/signal_bus/base/singal_helper.gd" id="1_3xar6"]
+[ext_resource type="Script" path="res://framework/manager/signal_bus/base/singal_config.gd" id="2_k61ng"]
+[ext_resource type="Script" path="res://framework/manager/signal_bus/base/singal_param.gd" id="3_t7o8u"]
+
+[sub_resource type="Resource" id="Resource_cb7th"]
+script = ExtResource("2_k61ng")
+singal_name = &"game_over"
+params = Array[ExtResource("3_t7o8u")]([])
+
+[sub_resource type="Resource" id="Resource_an5av"]
+script = ExtResource("2_k61ng")
+singal_name = &"game_start"
+params = Array[ExtResource("3_t7o8u")]([])
+
+[resource]
+script = ExtResource("1_3xar6")
+generate_button = false
+signal_bus_name = &"GameSignalBus"
+signal_configs = Array[ExtResource("2_k61ng")]([SubResource("Resource_cb7th"), SubResource("Resource_an5av")])
+is_enable_custom_signal = true

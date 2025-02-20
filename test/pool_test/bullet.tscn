@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://08pkpufakaac"]
+
+[ext_resource type="Script" path="res://test/pool_test/bullet.gd" id="1_ktwmr"]
+[ext_resource type="Script" path="res://test/pool_test/pool_bullet.gd" id="2_1qo5r"]
+[ext_resource type="Texture2D" uid="uid://bkmxmrp5vnbs7" path="res://test/icon.svg" id="2_nyxhs"]
+
+[node name="bullet" type="Node2D"]
+script = ExtResource("1_ktwmr")
+
+[node name="PoolNodeComponent" type="Node" parent="."]
+script = ExtResource("2_1qo5r")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(7.10543e-15, -21)
+scale = Vector2(0.09375, 0.320312)
+texture = ExtResource("2_nyxhs")
+
+[node name="DieTimer" type="Timer" parent="."]
+wait_time = 3.0

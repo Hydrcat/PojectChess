@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dadw634p26sti"]
+
+[ext_resource type="Script" path="res://addons/luban_godot/button_template.gd" id="1_cp6n2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wm2v"]
+bg_color = Color(0.57019, 0.114499, 0.230576, 1)
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnyxm"]
+bg_color = Color(0.881941, 0.113103, 0.392243, 1)
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16mt2"]
+bg_color = Color(0.452313, 0.0191903, 0.183656, 1)
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+
+[node name="ButtonTemplate" type="HBoxContainer"]
+offset_right = 128.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+theme_override_constants/separation = -2
+alignment = 1
+script = ExtResource("1_cp6n2")
+
+[node name="main_button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "button_template"
+text_overrun_behavior = 1
+
+[node name="delete_button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/hover = SubResource("StyleBoxFlat_1wm2v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cnyxm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_16mt2")
+text = " X "
+
+[connection signal="pressed" from="main_button" to="." method="_on_main_button_pressed"]
+[connection signal="focus_entered" from="delete_button" to="." method="_on_delete_focus_entered"]

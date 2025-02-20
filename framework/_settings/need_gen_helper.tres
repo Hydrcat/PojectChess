@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="NeedGenHelper" load_steps=8 format=3 uid="uid://cxrp3o7pk22d3"]
+
+[ext_resource type="Script" path="res://framework/_settings/need_gen.gd" id="1_dqr7h"]
+[ext_resource type="Resource" uid="uid://cw4ud8u4g7n26" path="res://framework/manager/ui/ui_signal_bus.tres" id="2_1xkhn"]
+[ext_resource type="Script" path="res://framework/_settings/need_gen_helper.gd" id="2_g7hed"]
+[ext_resource type="Resource" uid="uid://dpruroe73bfx2" path="res://framework/manager/asset/asset_helper.tres" id="2_kjom4"]
+[ext_resource type="Resource" uid="uid://c3csmt470uj5r" path="res://test/game_signal_bus.tres" id="4_mu0qa"]
+[ext_resource type="Script" path="res://framework/manager/ui/ui_auto/ui_helper.gd" id="5_rdy2l"]
+
+[sub_resource type="Resource" id="Resource_qlufm"]
+script = ExtResource("5_rdy2l")
+gen_button = false
+
+[resource]
+script = ExtResource("2_g7hed")
+need_gens = Array[ExtResource("1_dqr7h")]([ExtResource("2_kjom4"), ExtResource("2_1xkhn"), ExtResource("4_mu0qa"), SubResource("Resource_qlufm")])
+gen_button = false
