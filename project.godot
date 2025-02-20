@@ -10,7 +10,6 @@ config_version=5
 
 [application]
 
-config/name="GodotTemplate"
 run/main_scene="res://test/ui_test/ui_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
