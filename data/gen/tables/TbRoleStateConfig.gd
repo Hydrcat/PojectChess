@@ -5,25 +5,26 @@
 #  </auto-generated>
 
 extends RefCounted
-class_name TbCardPile
+class_name TbRoleStateConfig
 
-var _data_list: Array[CardPile]
+var _data_list: Array[RoleStateConfig]
 var _data_map: Dictionary
 
 func _init(_json_) -> void:
     for _json2_ in _json_:
-        var _v: CardPile
-        _v = CardPile.new(_json2_)
+        var _v: RoleStateConfig
+        _v = RoleStateConfig.new(_json2_)
         self._data_list.append(_v)
         self._data_map[_v.id] = _v
 
-func get_data_list() -> Array[CardPile]:
+func get_data_list() -> Array[RoleStateConfig]:
     return self._data_list
 
 func get_data_map() -> Dictionary:
     return self._data_map
 
-func get_item(key) -> CardPile:
+func get_item(key) -> RoleStateConfig:
     return self._data_map.get(key)
+
 
 

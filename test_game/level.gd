@@ -6,6 +6,9 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var level_interact: LevelInteract = $LevelInteract
 
+@onready var role_controller: RoleController = $RoleController
+@onready var level_controller: LevelController = $LevelController
+
 func _ready() -> void:
 	init_level()
 	GameSignalBus.instance.camera_move_to.connect(_on_camera_move_to)

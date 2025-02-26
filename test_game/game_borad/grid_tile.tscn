@@ -15,7 +15,7 @@ script = ExtResource("1_eyeqq")
 
 [node name="Select" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(0.530092, 0.905411, 0.84569, 1)
+self_modulate = Color(0.663399, 0.2774, 0.194551, 1)
 scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_l41og")
 

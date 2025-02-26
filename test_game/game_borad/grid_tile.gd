@@ -46,5 +46,5 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	var tween:Tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	var tween:Tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self,"scale",Vector2(1,1),0.5).from(Vector2(0,0))

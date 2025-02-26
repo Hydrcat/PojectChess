@@ -11,10 +11,7 @@ class_name CfgTables
 const json_path:String = "res://data/json/"
 
 static var instance : CfgTables
-static var TbCard: TbCard
-static var TbCardPile: TbCardPile
-static var TbEntity: TbEntity
-static var TbNewConfig: TbNewConfig
+static var TbRoleStateConfig: TbRoleStateConfig
 
 func loader(file_name:String):
     var json_file = FileAccess.open(json_path + file_name + ".json", FileAccess.READ)
@@ -26,8 +23,5 @@ func loader(file_name:String):
 func _init() -> void:
     assert(instance == null,"gen:不要重复初始化CfgTables")
 
-    self.TbCard = TbCard.new(loader.call('tbcard'))
-    self.TbCardPile = TbCardPile.new(loader.call('tbcardpile'))
-    self.TbEntity = TbEntity.new(loader.call('tbentity'))
-    self.TbNewConfig = TbNewConfig.new(loader.call('tbnewconfig'))
+    self.TbRoleStateConfig = TbRoleStateConfig.new(loader.call('tbrolestateconfig'))
 

@@ -35,9 +35,14 @@ const GRID_TILE: PackedScene = preload("res://test_game/game_borad/grid_tile.tsc
 @onready var main_board: TileMapLayer = $MainBorad
 # 交互用棋盘
 @onready var interact_board: TileMapLayer = $InteractBorad
+# 交互用格子
+@onready var grids: Node2D = $Grids
 
 # 格子集合
 var grid_tiles: Dictionary = {}
+
+# 当前选中的格子
+var selected_grid: GridTile = null
 
 
 # 真实游戏中不启用
@@ -60,7 +65,7 @@ func init_board() -> void:
 		tile.set_coord(coord)
 		tile.name = "%d,%d" % [coord.x, coord.y]
 		grid_tiles[coord] = tile
-		add_child(tile)
+		grids.add_child(tile)
 
 ## 编辑器模式下
 func init_board_in_engine() -> void:
@@ -71,13 +76,16 @@ func init_board_in_engine() -> void:
 		tile.set_coord(coord)
 		tile.name = "%d,%d" % [coord.x, coord.y]
 		grid_tiles[coord] = tile
-		add_child(tile)
+		$Grids.add_child(tile)
 
 # 处理点击，需要额外考虑相机的位置
 func _on_map_clicked(pos: Vector2) -> void:
 	var coord: Vector2i = main_board.local_to_map(pos)
 	var clicked_grid: GridTile = grid_tiles[coord]
 	if clicked_grid:
+		if selected_grid:
+			selected_grid.is_selcted = false
+		selected_grid = clicked_grid
 		clicked_grid.is_selcted = not clicked_grid.is_selcted
 
 # 拖动方向
@@ -90,4 +98,17 @@ func _on_dragging(_pos: Vector2, relative: Vector2) -> void:
 ## 获得图的中心位置
 func get_center_pos() -> Vector2:
 	return main_board.map_to_local(main_board.get_used_rect().get_center())
+
+## 获得指定的格子的位置
+func get_coord_pos(coord:Vector2i) -> Vector2:
+	return main_board.map_to_local(coord)
+
+## 检查是否存在目标格子
+func is_grid_exist(coord:Vector2i) -> bool:
+	return grid_tiles.has(coord)
+
 #endregion
+
+#reigon:Entity
+
+#endreigon

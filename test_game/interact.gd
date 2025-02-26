@@ -7,7 +7,7 @@ enum InteractType {
 }
 
 # 拖拽阈值
-const DRAG_THRESHOLD := 60
+const DRAG_THRESHOLD := 30
 
 #-----------信号-----------#
 signal map_clicked(pos:Vector2)
@@ -40,42 +40,53 @@ func _unhandled_input(event: InputEvent) -> void:
 			if is_dragging:
 				is_dragging = false
 				_on_drag_end(mouse_pos)
+				return
 			else :
-				_on_pressed(mouse_pos)		
+				_on_pressed(mouse_pos)
+				return	
 	
 	var mm := event as InputEventMouseMotion
 	if mm and not is_pressed:
 		_on_mouse_free_move(mouse_pos)
-		
+		return 
+	
 	if mm and mm.button_mask & MOUSE_BUTTON_LEFT and is_pressed:
 		if is_dragging:
 			_on_dragging(mouse_pos,mm.relative)
+			return 
 		else :
 			var distance = mouse_pos - drag_offset
 			if distance.length() > DRAG_THRESHOLD:	
 				is_dragging = true
 				_on_drag_begin(mouse_pos)
-
+				return
+			else :
+				_on_pressed(mouse_pos)
+				return
+	else:
+		if is_dragging:
+			is_dragging = false
+			_on_drag_end(mouse_pos)
 
 	
 #---------------- 鼠标交互回调 -------------------#
 
 func _on_drag_begin(mouse_pos:Vector2):
 	map_drag_begin.emit(mouse_pos)
-	Log.info("drag begin:%s" % [mouse_pos])
+	#Log.info("drag begin:%s" % [mouse_pos])
 
 func _on_drag_end(mouse_pos:Vector2):
 	map_drag_end.emit(mouse_pos)	
-	Log.info("drag end:%s" % [mouse_pos])
+	#Log.info("drag end:%s" % [mouse_pos])
 
 func _on_dragging(mouse_pos:Vector2,relative:Vector2):
 	map_dragging.emit(mouse_pos,relative)
-	Log.info("dragging:%s" % [mouse_pos])
+	#Log.info("dragging:%s" % [mouse_pos])
 
 func _on_pressed(mouse_pos:Vector2):
 	var clicked_pos := to_global(mouse_pos)
 	map_clicked.emit(clicked_pos)
-	Log.info("clicked:%s" % [clicked_pos])
+	#Log.info("clicked:%s" % [clicked_pos])
 
 func _on_mouse_free_move(mouse_pos:Vector2):
 	map_mouse_free_moving.emit(mouse_pos)
