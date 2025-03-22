@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://baql76sxmttr"]
 
-[ext_resource type="Script" path="res://test_game/game_borad/game_board.gd" id="1_sj83e"]
+[ext_resource type="Script" uid="uid://du3wnitt7i135" path="res://test_game/game_borad/game_board.gd" id="1_sj83e"]
 [ext_resource type="TileSet" uid="uid://dtxwvjygmva28" path="res://test_game/game_borad/game_board.tres" id="2_nvlwm"]
 
 [node name="GameBoard" type="Node2D"]

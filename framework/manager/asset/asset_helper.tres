@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AssetHelper" load_steps=5 format=3 uid="uid://dpruroe73bfx2"]
 
-[ext_resource type="Script" path="res://framework/manager/asset/asset_config.gd" id="1_nbkdt"]
-[ext_resource type="Script" path="res://framework/manager/asset/asset_helper.gd" id="2_lj024"]
+[ext_resource type="Script" uid="uid://cvxiuvsveu2s6" path="res://framework/manager/asset/asset_config.gd" id="1_nbkdt"]
+[ext_resource type="Script" uid="uid://bkx02sjhcgktg" path="res://framework/manager/asset/asset_helper.gd" id="2_lj024"]
 
 [sub_resource type="Resource" id="Resource_cxcdo"]
 script = ExtResource("1_nbkdt")

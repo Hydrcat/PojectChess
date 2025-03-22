@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="NeedGenHelper" load_steps=6 format=3 uid="uid://cxrp3o7pk22d3"]
 
-[ext_resource type="Script" path="res://framework/_settings/need_gen.gd" id="1_dqr7h"]
+[ext_resource type="Script" uid="uid://dgh0v3yxsvtq1" path="res://framework/_settings/need_gen.gd" id="1_dqr7h"]
 [ext_resource type="Resource" uid="uid://cw4ud8u4g7n26" path="res://framework/manager/ui/ui_signal_bus.tres" id="2_1xkhn"]
-[ext_resource type="Script" path="res://framework/_settings/need_gen_helper.gd" id="2_g7hed"]
+[ext_resource type="Script" uid="uid://dj3gek6hu4ymi" path="res://framework/_settings/need_gen_helper.gd" id="2_g7hed"]
 [ext_resource type="Resource" uid="uid://dpruroe73bfx2" path="res://framework/manager/asset/asset_helper.tres" id="2_kjom4"]
 [ext_resource type="Resource" uid="uid://b57ftwal57wqd" path="res://framework/manager/ui/ui_auto/ui_helper.tres" id="3_nhlnb"]
 

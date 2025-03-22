@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="SignalHelper" load_steps=5 format=3 uid="uid://cw4ud8u4g7n26"]
 
-[ext_resource type="Script" path="res://framework/manager/signal_bus/base/singal_helper.gd" id="1_8lh7a"]
-[ext_resource type="Script" path="res://framework/manager/signal_bus/base/singal_config.gd" id="2_kedib"]
-[ext_resource type="Script" path="res://framework/manager/signal_bus/base/singal_param.gd" id="3_wcyl3"]
+[ext_resource type="Script" uid="uid://d1dey5fhc17sd" path="res://framework/manager/signal_bus/base/singal_helper.gd" id="1_8lh7a"]
+[ext_resource type="Script" uid="uid://csjpwfktycsfr" path="res://framework/manager/signal_bus/base/singal_config.gd" id="2_kedib"]
+[ext_resource type="Script" uid="uid://bsg7rx2c8b3x5" path="res://framework/manager/signal_bus/base/singal_param.gd" id="3_wcyl3"]
 
 [sub_resource type="Resource" id="Resource_ygdu8"]
 script = ExtResource("2_kedib")

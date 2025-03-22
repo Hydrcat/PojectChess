@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://2216mcmnp3x6"]
 
-[ext_resource type="Script" path="res://addons/luban_godot/luabn_editor.gd" id="1_540qh"]
+[ext_resource type="Script" uid="uid://drsxpjfb2rote" path="res://addons/luban_godot/luabn_editor.gd" id="1_540qh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6alnk"]
 bg_color = Color(0.502342, 0.831701, 0.634993, 1)

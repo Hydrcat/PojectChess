@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csc58c8xssp8f"]
 
-[ext_resource type="Script" path="res://test_game/game_borad/grid_tile.gd" id="1_eyeqq"]
+[ext_resource type="Script" uid="uid://bl0mssk7nm5b2" path="res://test_game/game_borad/grid_tile.gd" id="1_eyeqq"]
 [ext_resource type="Texture2D" uid="uid://dh4u1ar3wxhy0" path="res://test_game/game_borad/tile_horizontal.png" id="2_l41og"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35pn0"]
