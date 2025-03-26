@@ -18,15 +18,17 @@ config/icon="res://icon.png"
 [autoload]
 
 HydrcatFramework="*res://framework/hydrcat_framework.tscn"
+Mouse="*res://global/mouse_cursor/mouse.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
+mouse_cursor/custom_image="uid://bq7g32yjgml2v"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/hexagon_tilemaplayer/plugin.cfg", "res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg")
 
 [input]
 

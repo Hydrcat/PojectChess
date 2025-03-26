@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://djms5f2mvk7nu"]
+
+[ext_resource type="Script" uid="uid://bubn0g1a24r88" path="res://game/interact_fsm/interact_fsm.gd" id="2_0uqyr"]
+[ext_resource type="Script" uid="uid://d2eleod17vp88" path="res://game/interact_fsm/click.gd" id="4_0uqyr"]
+[ext_resource type="Script" uid="uid://fe0gsegrvv74" path="res://game/interact_fsm/drag.gd" id="5_o55no"]
+[ext_resource type="Script" uid="uid://c4ai6ljn56s3v" path="res://framework/core/fsm/StateBlackboard.gd" id="6_o55no"]
+[ext_resource type="Script" uid="uid://bo1i031oeshff" path="res://game/interact_fsm/disable.gd" id="6_uy4pk"]
+
+[node name="NodeGame" type="Node2D"]
+
+[node name="InteractFSM" type="Node" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("2_0uqyr")
+camera = NodePath("../Camera2D")
+metadata/_custom_type_script = "uid://p5vwbjlxwy6y"
+
+[node name="Click" type="Node" parent="InteractFSM"]
+script = ExtResource("4_0uqyr")
+metadata/_custom_type_script = "uid://bp8ckya7enqg0"
+
+[node name="Drag" type="Node" parent="InteractFSM"]
+script = ExtResource("5_o55no")
+metadata/_custom_type_script = "uid://bp8ckya7enqg0"
+
+[node name="Disable" type="Node" parent="InteractFSM"]
+script = ExtResource("6_uy4pk")
+metadata/_custom_type_script = "uid://bp8ckya7enqg0"
+
+[node name="StateBlackboard" type="Node" parent="InteractFSM"]
+script = ExtResource("6_o55no")
+metadata/_custom_type_script = "uid://c4ai6ljn56s3v"
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,14 +1,14 @@
 extends StateBase
 class_name StateMachine
 ## 状态机
-signal state_changed(last_state,current_state)
+signal state_changed(last_state, current_state)
 
 ## 当前的状态
-var current_state:String
+var current_state: String
 ## 当前的状态节点
-var current_state_node:State
+var current_state_node: State
 ## 状态黑板
-var blackboard:StateBlackboard
+var blackboard: StateBlackboard
 ## 所有的状态节点
 var states := {}
 
@@ -25,9 +25,8 @@ func get_blackboard() -> StateBlackboard:
 				blackboard = child
 	return blackboard
 
-func get_state_node(state:String) -> State:
-	return states[state]	
-
+func get_state_node(state: String) -> State:
+	return states[state]
 
 
 #-------------------------------------------------------
@@ -50,18 +49,17 @@ func _ready() -> void:
 		printerr("当前状态机不存在子状态，请检查")
 		
 
-func _physics_process(delta:float) -> void:
+func _physics_process(delta: float) -> void:
 	current_state_node.state_process(delta)
 
 #-------------------------------------------------------
 #	自定义
 #-------------------------------------------------------
-func switch_to(state:String,data:Dictionary={}) -> void:
+func switch_to(state: String, data: Dictionary = {}) -> void:
 	if state != current_state:
 		current_state_node._exit()
-		state_changed.emit(current_state,state)
+		state_changed.emit(current_state, state)
 		
 		current_state = state
 		current_state_node = states[current_state]
 		current_state_node._enter(data)
-		

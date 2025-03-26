@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://8d0vr21t3w6g"]
+
+[ext_resource type="Script" uid="uid://dgqqg0symyic" path="res://game/game_borad/battle.gd" id="1_p5byn"]
+[ext_resource type="Texture2D" uid="uid://dbsmj6rkpheji" path="res://game/game_borad/tile_horizontal.png" id="1_p8fvu"]
+[ext_resource type="Script" uid="uid://bt80q3w4bpojg" path="res://game/game_borad/hexagon_tile_map_layer.gd" id="3_mruy0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h0na5"]
+texture = ExtResource("1_p8fvu")
+texture_region_size = Vector2i(164, 190)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4n4ns"]
+tile_shape = 3
+tile_size = Vector2i(164, 190)
+sources/0 = SubResource("TileSetAtlasSource_h0na5")
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_p5byn")
+
+[node name="HexagonTileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_4n4ns")
+script = ExtResource("3_mruy0")
+pathfinding_enabled = true
+debug_mode = 3
+metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
+
+[node name="Units" type="Node2D" parent="."]
+
+[node name="Overlay" type="Node2D" parent="."]
