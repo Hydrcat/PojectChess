@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node2D
 
 @onready var mouse_sprite: Sprite2D = $Body/Visual
 @onready var mouse_body: Node2D = $Body
@@ -33,6 +33,9 @@ func _input(event: InputEvent):
 		mouse_body.global_position = mouse_postion
 
 #region:utils
+## 获取鼠标位置
+func get_mouse_position() -> Vector2:
+	return mouse_body.global_position
 
 func set_mouse_visible(switch: bool) -> void:
 	mouse_sprite.visible = switch

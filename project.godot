@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjectChess"
-run/main_scene="res://test_game/level.tscn"
+run/main_scene="uid://8d0vr21t3w6g"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.png"
 
@@ -19,16 +19,21 @@ config/icon="res://icon.png"
 
 HydrcatFramework="*res://framework/hydrcat_framework.tscn"
 Mouse="*res://global/mouse_cursor/mouse.tscn"
+Interact="*res://global/interact_fsm/interact.tscn"
+Panku="*res://addons/panku_console/console.tscn"
+Debug="*res://global/debug/debug.tscn"
 
 [display]
 
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 mouse_cursor/custom_image="uid://bq7g32yjgml2v"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/hexagon_tilemaplayer/plugin.cfg", "res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/hexagon_tilemaplayer/plugin.cfg", "res://addons/hydrcat.framework/plugin.cfg", "res://addons/luban_godot/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [input]
 

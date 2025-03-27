@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4mj7r4no6aji"]
+
+[ext_resource type="Script" uid="uid://bubn0g1a24r88" path="res://global/interact_fsm/interact_fsm.gd" id="1_x8j3i"]
+[ext_resource type="Script" uid="uid://d2eleod17vp88" path="res://global/interact_fsm/click.gd" id="2_cjou4"]
+[ext_resource type="Script" uid="uid://fe0gsegrvv74" path="res://global/interact_fsm/drag.gd" id="3_86tjq"]
+[ext_resource type="Script" uid="uid://bo1i031oeshff" path="res://global/interact_fsm/disable.gd" id="4_t3boc"]
+[ext_resource type="Script" uid="uid://c4ai6ljn56s3v" path="res://framework/core/fsm/StateBlackboard.gd" id="5_cjou4"]
+
+[node name="Interact" type="Node"]
+script = ExtResource("1_x8j3i")
+
+[node name="Click" type="Node" parent="."]
+script = ExtResource("2_cjou4")
+
+[node name="Drag" type="Node" parent="."]
+script = ExtResource("3_86tjq")
+
+[node name="Disable" type="Node" parent="."]
+script = ExtResource("4_t3boc")
+
+[node name="StateBlackboard" type="Node" parent="."]
+script = ExtResource("5_cjou4")
+metadata/_custom_type_script = "uid://c4ai6ljn56s3v"

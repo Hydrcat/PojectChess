@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://8d0vr21t3w6g"]
+[gd_scene load_steps=13 format=4 uid="uid://8d0vr21t3w6g"]
 
-[ext_resource type="Script" uid="uid://dgqqg0symyic" path="res://game/game_borad/battle.gd" id="1_p5byn"]
-[ext_resource type="Texture2D" uid="uid://dbsmj6rkpheji" path="res://game/game_borad/tile_horizontal.png" id="1_p8fvu"]
-[ext_resource type="Script" uid="uid://bt80q3w4bpojg" path="res://game/game_borad/hexagon_tile_map_layer.gd" id="3_mruy0"]
+[ext_resource type="Script" uid="uid://dgqqg0symyic" path="res://game/game_borad/battle.gd" id="1_sl64f"]
+[ext_resource type="Texture2D" uid="uid://dbsmj6rkpheji" path="res://game/game_borad/tile.png" id="2_js1xr"]
+[ext_resource type="Script" uid="uid://bt80q3w4bpojg" path="res://game/game_borad/game_board.gd" id="3_pfy7p"]
+[ext_resource type="Script" uid="uid://c36ktywfdimol" path="res://game/game_borad/logic_map.gd" id="4_pfy7p"]
+[ext_resource type="Script" uid="uid://cp6jtbwox7r23" path="res://game/game_borad/game_board_debug.gd" id="6_4h0tq"]
+[ext_resource type="Resource" uid="uid://by6d5t8pga7dg" path="res://config/game_boards/102.tres" id="6_52tdh"]
+[ext_resource type="Script" uid="uid://v1b5fgl2o1vb" path="res://game/game_borad/global/levle_camera.gd" id="7_52tdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h0na5"]
-texture = ExtResource("1_p8fvu")
+texture = ExtResource("2_js1xr")
 texture_region_size = Vector2i(164, 190)
 0:0/0 = 0
 
@@ -14,17 +18,59 @@ tile_shape = 3
 tile_size = Vector2i(164, 190)
 sources/0 = SubResource("TileSetAtlasSource_h0na5")
 
-[node name="Battle" type="Node2D"]
-script = ExtResource("1_p5byn")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js1xr"]
+resource_name = "normal"
+texture = ExtResource("2_js1xr")
+texture_region_size = Vector2i(164, 190)
+0:0/0 = 0
 
-[node name="HexagonTileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pfy7p"]
+resource_name = "block"
+texture = ExtResource("2_js1xr")
+texture_region_size = Vector2i(164, 190)
+0:0/0 = 0
+0:0/0/modulate = Color(0.209963, 0.096876, 0.137815, 1)
+
+[sub_resource type="TileSet" id="TileSet_pfy7p"]
+tile_shape = 3
+tile_size = Vector2i(164, 190)
+sources/0 = SubResource("TileSetAtlasSource_js1xr")
+sources/1 = SubResource("TileSetAtlasSource_pfy7p")
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_sl64f")
+
+[node name="BattleController" type="Node" parent="."]
+
+[node name="InteractController" type="Node" parent="BattleController"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("7_52tdh")
+
+[node name="Arts" type="Node2D" parent="."]
+
+[node name="Terrain" type="TileMapLayer" parent="Arts"]
 tile_set = SubResource("TileSet_4n4ns")
-script = ExtResource("3_mruy0")
+script = ExtResource("3_pfy7p")
 pathfinding_enabled = true
 debug_mode = 3
 metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
 
-[node name="Units" type="Node2D" parent="."]
+[node name="Logic" type="Node2D" parent="."]
+script = ExtResource("4_pfy7p")
+
+[node name="GameBorad" type="TileMapLayer" parent="Logic"]
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wkAAAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD+/wcAAAAAAAAAAAD+/wgAAAAAAAAAAAD+/wkAAAAAAAAAAAD+/woAAAAAAAAAAAD+/wsAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAQAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAQAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_pfy7p")
+script = ExtResource("3_pfy7p")
+game_board_config = ExtResource("6_52tdh")
+config_id = 102
+pathfinding_enabled = true
+metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
+
+[node name="Debug" type="Node2D" parent="Logic"]
+script = ExtResource("6_4h0tq")
 
 [node name="Overlay" type="Node2D" parent="."]
+
+[node name="Units" type="Node2D" parent="."]

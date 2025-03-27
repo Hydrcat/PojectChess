@@ -47,6 +47,12 @@ func _ready() -> void:
 	else:
 		set_physics_process(false)
 		printerr("当前状态机不存在子状态，请检查")
+	
+	_state_machine_ready()
+
+func _state_machine_ready() -> void:
+	# 状态机准备完成
+	pass
 		
 
 func _physics_process(delta: float) -> void:

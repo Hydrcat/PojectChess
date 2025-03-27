@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="GameBoardConfig" load_steps=2 format=3 uid="uid://dkrhcifd1gk23"]
+
+[ext_resource type="Script" uid="uid://n5f4chvq7u25" path="res://game/game_borad/game_board_config.gd" id="1_3gfbg"]
+
+[resource]
+script = ExtResource("1_3gfbg")
+grid_sets = Dictionary[Vector2i, int]({
+Vector2i(0, 5): 0,
+Vector2i(0, 6): 0,
+Vector2i(0, 7): 0,
+Vector2i(1, 3): 0,
+Vector2i(1, 4): 0,
+Vector2i(1, 5): 0,
+Vector2i(1, 6): 0,
+Vector2i(1, 7): 0,
+Vector2i(1, 8): 0,
+Vector2i(1, 9): 0,
+Vector2i(2, 1): 0,
+Vector2i(2, 2): 0,
+Vector2i(2, 3): 0,
+Vector2i(2, 4): 0,
+Vector2i(2, 5): 0,
+Vector2i(2, 6): 0,
+Vector2i(2, 7): 0,
+Vector2i(2, 8): 0,
+Vector2i(2, 9): 0,
+Vector2i(2, 10): 0,
+Vector2i(2, 11): 0,
+Vector2i(3, 2): 0,
+Vector2i(3, 3): 0,
+Vector2i(3, 4): 0,
+Vector2i(3, 5): 0,
+Vector2i(3, 6): 0,
+Vector2i(3, 7): 0,
+Vector2i(3, 8): 0,
+Vector2i(3, 9): 0,
+Vector2i(3, 10): 0,
+Vector2i(4, 4): 0,
+Vector2i(4, 5): 0,
+Vector2i(4, 6): 0,
+Vector2i(4, 7): 0,
+Vector2i(4, 8): 0,
+Vector2i(5, 6): 0
+})
+game_board_size = Vector2i(0, 0)
